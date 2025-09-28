@@ -5,14 +5,19 @@ from flask_cors import CORS
 import nltk
 
 # ------------------ NLTK Setup ------------------
-# Download 'punkt' inside project if not already present
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt', download_dir='./nltk_data')
+# Create a folder for nltk data
+nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
+os.makedirs(nltk_data_dir, exist_ok=True)
 
-# Add the local download folder to NLTK paths
-nltk.data.path.append('./nltk_data')
+# Add it to NLTK search paths
+nltk.data.path.append(nltk_data_dir)
+
+# Download required resources if not already present
+for resource in ["punkt", "punkt_tab"]:
+    try:
+        nltk.data.find(f"tokenizers/{resource}")
+    except LookupError:
+        nltk.download(resource, download_dir=nltk_data_dir)
 
 # ------------------ Flask App ------------------
 app = Flask(__name__)

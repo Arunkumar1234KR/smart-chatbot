@@ -48,7 +48,7 @@ class Chatbox {
        
 
         //http://127.0.0.1:5000/predict do not hotcode $SCRIPT_ROOT +'/predict', 
-        fetch('http://127.0.0.1:5000/predict' , {
+        fetch('https://smart-chatbot-2.onrender.com/predict' , {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',

@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, jsonify # type: ignore
+from flask import Flask, render_template, request, jsonify 
 from chat import get_response
 import os
-from flask_cors import CORS # type: ignore
+from flask_cors import CORS 
 
 app = Flask(__name__)
 CORS(app)

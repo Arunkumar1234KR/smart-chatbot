@@ -36,13 +36,16 @@ body {
 .chatbox__support {
     display: flex;
     flex-direction: column;
-    background: #eee;
-    width: 300px;
-    height: 350px;
-    z-index: -123456;
-    opacity: 0;
-    transition: all .5s ease-in-out;
+    background: #f9f9f9;
+    width: 350px;
+    height: 450px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 123456;
+    opacity: 1; /* always visible */
 }
+
 
 /* CONTENT ISOPEN */
 .chatbox--active {
@@ -53,9 +56,9 @@ body {
 }
 
 /* BUTTON */
-.chatbox__button {
+/* .chatbox__button {
     text-align: right;
-}
+} */
 
 .send__button {
     padding: 6px;
@@ -212,7 +215,7 @@ body {
     color: white;
 }
 
-.chatbox__button button,
+/* .chatbox__button button,
 .chatbox__button button:focus,
 .chatbox__button button:visited {
     padding: 10px;
@@ -224,4 +227,4 @@ body {
     border-bottom-left-radius: 50px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
+} */
